@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -10,7 +11,7 @@ import requests
     #    'ip': geodata['ip'],
      #   'country': geodata['country_name']
     #})
-
+###Testing GeoAPI
 def home(request):
     #ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
     ip_address = '65.18.122.3'
@@ -24,3 +25,4 @@ def home(request):
         'longitude': geodata['longitude'],
         'api_key': 'AIzaSyC1UpCQp9zHokhNOBK07AvZTiO09icwD8I'  # Don't do this! This is just an example. Secure your keys properly.
     })
+
