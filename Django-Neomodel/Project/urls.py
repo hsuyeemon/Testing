@@ -1,4 +1,4 @@
-"""DjangoProject URL Configuration
+"""Project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -13,11 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path,include
+from app import views
 
 urlpatterns = [
-    path('polls/', include('polls.urls')),
+	path('app/', include('app.urls')),
+    path('add_country/', views.add_country, name='add-country'),
+    path('get_country/', views.get_country, name='get_country'),
+    path('delete_country/', views.delete_country, name='delete_country'),
     #path('admin/', admin.site.urls),
 ]
