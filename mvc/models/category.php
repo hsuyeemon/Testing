@@ -3,6 +3,7 @@ $conn = mysqli_connect("localhost","root","");
 mysqli_select_db($conn,"store");
 
 function get_cats(){
+	global $conn;
 	$result = mysqli_query($conn,"SELECT * FROM categories");
 
 	$cats = array();
@@ -10,12 +11,14 @@ function get_cats(){
 	while($row = mysqli_fetch_assoc($result)){
 		$cats[] = $row;
 	}
+    #print_r($cats);
 
 	return $cats;
 }
 
 function insert_cats(){
 
+	global $conn;
 	mysqli_query($conn,"INSERT INTO categories 
 		VALUES ('name',now(),now())" );
 
