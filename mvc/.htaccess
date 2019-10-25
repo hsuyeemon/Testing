@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /Testing/mvc/
+RewriteRule ^(\w+)/(\w+)/(\w+)/?$ mvc.php?controller=$1&action=$2&id=$3 [L,QSA]
+RewriteRule ^(\w+)/(\w+)/?$ mvc.php?controller=$1&action=$2 [L,QSA]
+RewriteRule ^(\w+)/?$ mvc.php.php?controller=$1 [L,QSA]
+RewriteRule . mvc.php?controller=category [L,QSA]
